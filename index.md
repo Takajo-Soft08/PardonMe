@@ -1,21 +1,18 @@
 <!DOCTYPE html>
- <head>
-	 <title>Untitled</title>
-	 <meta charset="UTF-8"/>
-	 <link rel="stylesheet" href="" type="text/css"/>
- </head>
-	 <body>
-	 <script>
-//今日の日付データを変数hidukeに格納
-		 var hiduke=new Date();
-		 //年・月・日・曜日を取得する 
-		 var year = hiduke.getFullYear();
-		 var month = hiduke.getMonth()+1;
-		 var week = hiduke.getDay();
-		 var day = hiduke.getDate();
-		 var yobi= new Array("日","月","火","水","木","金","土");
-		 document.write("西暦"+year+"年"+month+"月"+day+"日 "+yobi[week]+"曜日");
-	</script>
-	<p>、</p>
-	 </body>
- </html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>時間の表示</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <script>
+    time();
+    function time(){
+        var now = new Date();
+        document.getElementById("time").innerHTML = now.toLocaleTimeString();
+    }
+    setInterval('time()',1000);
+    </script>
+</body>
+</html>
